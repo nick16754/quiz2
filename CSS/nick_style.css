@@ -1,0 +1,28 @@
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+.flash {
+   animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: red;}
+    to {color: black;}
+}
+
+h2:hover {
+  font-size: 200%;
+  font-weight: bolder;
+  color: blue;
+}
+
+.contact-form {
+  margin: 80px 375px;
+}
