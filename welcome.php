@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,23 +9,21 @@
   </head>
   <body>
     <div class="contact-form" id="contact">
+      <?php if (null == isset($_COOKIE['first'])): ?>
       <h1 class="flash">Like Cats?</h1>
       <h2>Sign up for free Cat Facts!</h2>
       <form action="register.php" method="post">
         First Name:<br>
-        <input type="text" name="firstName" size="50"><br>
+        <input type="text" name="first" size="50"><br>
         Last Name:<br>
-        <input type="text" name="lastName" size="50"><br>
+        <input type="text" name="last" size="50"><br>
         E-mail:<br>
         <input type="text" name="email" size="50"><br>
         <input type="submit">
       </form>
     </div>
-    <?php
-      if(isset($_COOKIE[$cookie_fname]) && isset($_COOKIE[$cookie_email]))
-      {
-          echo "Hi, " . $cookie_fname . ", you recently signed up for Cat Facts with the email address: " . $cookie_email . ", thank you!";
-      }
-    ?>
+    <?php else: ?>
+      <?php echo "Hi, " . $_COOKIE['first'] . ", you recently signed up for Cat Facts with the email address: " . $_COOKIE['email'] . ", thank you!";  ?>
+    <?php endif; ?>
   </body>
 </html>
